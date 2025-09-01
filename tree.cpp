@@ -58,7 +58,7 @@ struct Directory
         }
     }
 
-    int getRemaining() {
+    int getRemaining() const {
         return dirs.size() + files.size();
     }
 };
@@ -91,15 +91,18 @@ void recursiveIteration(Directory startDirectory) {
 
     while (dirStack.size() > 0) {
         Directory& curDir = dirStack.back();
-        {
-            if (curDir.getRemaining() > 0) {
+        if (curDir.getRemaining() > 0) {
             auto[name, dir] = curDir.getNext();
-            if (dir.m_dirPath.empty()) cout << "File: " << name << endl;
-            else {
-                cout << "Folder: " << name << endl;
-                dirStack.push_back(dir);
+            std::cout << "|";
+            for (auto it = dirStack.begin(); it != dirStack.end() - 1; ++it) {
+                cout << "    ";
+                if ((it + 1)->m_dirPath == curDir.m_dirPath) cout << '|';
+                else cout << ((it + 1)->getRemaining() > 0 ? '|' : ' ');
             }
+            if (!dir.m_dirPath.empty()) dirStack.push_back(dir);
+
+            cout << "----" << name << endl;
+
         } else dirStack.pop_back();
-    }
     }
 }
