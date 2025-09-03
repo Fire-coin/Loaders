@@ -8,11 +8,11 @@
 using namespace std;
 namespace fs = filesystem;
 
-int runMenu(vector<string>&, int);
+int runMenu(const vector<string>&, int);
 int loadPrograms(vector<string>&);
 
 string getExtension(const string&);
-string getName(filesystem::path);
+string getName(const filesystem::path&);
 
 int main() {
     vector<string> programs;
@@ -34,7 +34,7 @@ int main() {
 }
 
 /* Returns -1 if q is pressed, and index of selected option otherwise */
-int runMenu(vector<string>& menu, int current) {
+int runMenu(const vector<string>& menu, int current) {
     int c = 0;
 
     do {
@@ -56,7 +56,7 @@ int runMenu(vector<string>& menu, int current) {
     return c == 'q' ? -1 : current;
 }
 
-string getName(filesystem::path path) {
+string getName(const filesystem::path& path) {
     string name = path.string();
 
     int index = name.find_last_of('\\');
