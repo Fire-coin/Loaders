@@ -51,9 +51,9 @@ int runMenu(const vector<string>& menu, int current) {
             current--;
             if (current < 0) current = menu.size() - 1;
         }
-    } while (c != 'q' && c != 13);
+    } while (c != 'q' && c != 'Q' && c != 13);
 
-    return c == 'q' ? -1 : current;
+    return c == 'q' || c == 'Q' ? -1 : current;
 }
 
 string getName(const filesystem::path& path) {
