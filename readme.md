@@ -2,6 +2,32 @@
 <img width="350" height="107" alt="Screenshot 2025-09-03 234154" src="https://github.com/user-attachments/assets/49f6ede3-deb4-49e8-ac2c-a822e11469f0" />
 
 The main part of this repository is to provide with a menu selector, where you can navigate through executable files with vim motions.
+
+## Installing
+First you need to have scoop installed on windows machine
+### Installing scoop
+Open powershell and type this: 
+* <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code>
+* <code>Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression</code>
+
+After installing run: <code>scoop status</code>
+
+Here is scoop official page: https://scoop.sh/
+
+### Installing bucket with scoop
+Open powershell and type this:
+* <code>scoop bucket add loaders https://github.com/Fire-coin/firecoin-scoop-loaders</code>
+* <code>scoop install loaders</code>
+
+After this you can type xmenu, and the menu with executables will pop up.
+
+### Using prebuilt files
+To use prebuilt files navigate to this directory: 
+* <code>cd ~\scoop\apps\loaders\1.0.0\bin</code>
+
+Now when you run xmenu, you will see the prebuilt programs.
+
+
 ## Using main program
 ### -> You navigate using vim motions only up and down, so by pressing j you move down by 1 and by pressing k you move up by 1
 ### -> To select an executable to be run, you need to press enter key, after selected exe file finishes running, program will prompt you to press enter to go back to the menu
@@ -26,4 +52,3 @@ All files are independent of each other. Just compile files with below stated C+
 -> you need C++ 17 or later, cross platform
 ## table.cpp
 -> idk, just dont use C++ 98 or older, cross platform
-
