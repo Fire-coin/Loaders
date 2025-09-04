@@ -15,7 +15,7 @@ This file prompts user to enter directory from which to create a tree from, incl
 <img width="858" height="550" alt="Screenshot 2025-09-01 153353" src="https://github.com/user-attachments/assets/509415ee-73cf-4cf1-becf-c2426433d183" />
 
 ## Table.exe
-This file promts user to provide source file of space separated columns and new line separated rows, to create a table. Then it also prompts wheter to display it in console or output to the file. In the image are shown both console and file output.
+This file promts user to provide source file of space separated columns and new line separated rows, to create a table. Then it also prompts wheter to display it in console or output to the file. In the image are shown both console and file output from data.txt file.
 <img width="867" height="919" alt="Screenshot 2025-09-03 233511" src="https://github.com/user-attachments/assets/ccc2e92a-5231-41ba-a27f-8f91c783def9" />
 
 # Building
@@ -26,3 +26,4 @@ All files are independent of each other. Just compile files with below stated C+
 -> you need C++ 17 or later, cross platform
 ## table.cpp
 -> idk, just dont use C++ 98 or older, cross platform
+
